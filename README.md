@@ -1,12 +1,12 @@
 # Tic Tac Four
 
-The world-first native and multiplayer Tic-Tac-Toe game with 4 in a row with many grid sizes.
+The world-first native and multiplayer [Tic-Tac-Toe](https://en.wikipedia.org/wiki/Tic-tac-toe) game with 4 in a row with many grid sizes.
 
 We also plan to have tournaments.
 
 ## Motivation
 
-The "3 in a row" rule dominate all Tic-Tac-Toe games, which limit the strategy thinking of the game.
+The "3 in a row" rule dominate all Tic-Tac-Toe games, which limit the strategy planning of the game.
 
 There's a not well known "4 in a row" rule that increase the strategy planning to a level comparable to Checkers and Chess games.
 
@@ -72,3 +72,7 @@ If you want to support our work, consider a donation, every amount is important.
 ```
 bc1qg9x5vzr4ppkm2ssw5k7ete4lu49wg7t02azkce
 ```
+
+## Credits
+
+- [Tic Tac Toe in Godot 4](https://github.com/KingGD24/Tic-Tac-Toe_In_Godot-4)

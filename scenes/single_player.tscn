@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgtbpgksycu1a"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_042my"]
+
+[node name="single_player" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_042my")
+play_with = "AI"
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0, 0.0431373, 1)
+
+[node name="cells" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 50.0
+offset_right = 380.0
+offset_bottom = 90.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 8
+
+[node name="restart_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 600.0
+offset_right = 684.0
+offset_bottom = 650.0
+text = "Restart"
+
+[connection signal="pressed" from="restart_button" to="." method="_on_restart_button_pressed"]
