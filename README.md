@@ -47,7 +47,7 @@ If you have a suggestion, open an issue with "(Suggestion)" before the title.
 - Download the repository and game assets
 
 ```sh
-git clone https://github.com/FOSS-Supremacy/celestis
+git clone https://github.com/FOSS-Supremacy/tic-tac-four
 ```
 
 - Download the [Godot Engine](https://godotengine.org/) 4.x version (normal variant, not C#)
