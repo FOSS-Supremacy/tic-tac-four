@@ -38,28 +38,26 @@ func _on_restart_button_pressed():
 	get_tree().reload_current_scene()
 
 func check_match():
-	for h in range(3):
-		if cells[0+3*h].cell_value == "X" and cells[1+3*h].cell_value == "X" and cells[2+3*h].cell_value == "X":
-			return ["X", 1+3*h, 2+3*h, 3+3*h]
-	for v in range(3):
-		if cells[0+v].cell_value == "X" and cells[3+v].cell_value == "X" and cells[6+v].cell_value == "X":
-			return ["X", 1+v, 4+v, 7+v]
-	if cells[0].cell_value == "X" and cells[4].cell_value == "X" and cells[8].cell_value == "X":
-		return ["X", 1, 5, 9]
-	elif cells[2].cell_value == "X" and cells[4].cell_value == "X" and cells[6].cell_value == "X":
-		return ["X", 3, 5, 7]
+	for h in range(8):
+		for start in range(5):
+			if cells[start + h * 8].cell_value == "X" and cells[start + 1 + h * 8].cell_value == "X" and cells[start + 2 + h * 8].cell_value == "X" and cells[start + 3 + h * 8].cell_value == "X":
+				return ["X", start + h * 8 + 1, start + h * 8 + 2, start + h * 8 + 3]
 	
-	for h in range(3):
-		if cells[0+3*h].cell_value == "O" and cells[1+3*h].cell_value == "O" and cells[2+3*h].cell_value == "O":
-			return ["O", 1+3*h, 2+3*h, 3+3*h]
-	for v in range(3):
-		if cells[0+v].cell_value == "O" and cells[3+v].cell_value == "O" and cells[6+v].cell_value == "O":
-			return ["O", 1+v, 4+v, 7+v]
-	if cells[0].cell_value == "O" and cells[4].cell_value == "O" and cells[8].cell_value == "O":
-		return ["O", 1, 5, 9]
-	elif cells[2].cell_value == "O" and cells[4].cell_value == "O" and cells[6].cell_value == "O":
-		return ["O", 3, 5, 7]
-	
+	for v in range(8):
+		for start in range(5):
+			if cells[v + start * 8].cell_value == "X" and cells[v + (start + 1) * 8].cell_value == "X" and cells[v + (start + 2) * 8].cell_value == "X" and cells[v + (start + 3) * 8].cell_value == "X":
+				return ["X", (start + 1) * 8 + v + 1, (start + 2) * 8 + v + 1, (start + 3) * 8 + v + 1]
+
+	for start in range(5):
+		for row in range(5):
+			if cells[start + row * 8].cell_value == "X" and cells[start + (row + 1) * 8 + 1].cell_value == "X" and cells[start + (row + 2) * 8 + 2].cell_value == "X" and cells[start + (row + 3) * 8 + 3].cell_value == "X":
+				return ["X", start + row * 8 + 1, start + (row + 1) * 8 + 2, start + (row + 2) * 8 + 3]
+
+	for start in range(3, 8):
+		for row in range(5):
+			if cells[start + row * 8].cell_value == "X" and cells[start + (row + 1) * 8 - 1].cell_value == "X" and cells[start + (row + 2) * 8 - 2].cell_value == "X" and cells[start + (row + 3) * 8 - 3].cell_value == "X":
+				return ["X", start + row * 8 + 1, start + (row + 1) * 8, start + (row + 2) * 8]
+
 	var full = true
 	for cell in cells:
 		if cell.cell_value == "":
