@@ -10,6 +10,16 @@ The "3 in a row" rule dominate all Tic-Tac-Toe games, which limit the strategy p
 
 There's a not well known "4 in a row" rule that increase the strategy planning to a level comparable to Checkers and Chess games.
 
+## Why Godot?
+
+The Godot engine allows you to save a lot of time in development because of the node system, where the relationship between the game components is very easily and fast to implement things.
+
+Also because of GDScript, the Godot scripting language allows you to write less code to implement things.
+
+## Why Redot?
+
+Read [this](https://www.redotengine.org/blog/redot-why-we-forked) article.
+
 ## How To Play
 
 Left-click the grid squares until you have a row with 4 items.
